@@ -20,12 +20,21 @@ let vm = Vue.createApp({
             this.rotateX = 0
             this.rotateY = 0
             this.rotateZ = 0
+            this.animateButton('reset-button');
         },
         async copy() {
             let text = `transform:${this.box.transform}`
             await navigator.clipboard.writeText(text)
 
             alert('CSS copied to clipboard')
+            this.animateButton('copy-button')
+        },
+        animateButton(buttonId) {
+            const button = document.getElementById(buttonId);
+            button.classList.add('clicked');
+            setTimeout(() => {
+                button.classList.remove('clicked');
+            }, 200);
         }
     },
 }).mount('#app')

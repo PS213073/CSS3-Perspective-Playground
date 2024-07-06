@@ -67,6 +67,20 @@ section.settings {
     background: #8d81f3;
 }
 
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 button {
     background-color: #8d81f3;
     color: #fff;
@@ -76,6 +90,11 @@ button {
     outline: none;
     border: none;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.clicked {
+    animation: button-click 0.2s;
 }
 
 label {
